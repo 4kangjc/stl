@@ -72,24 +72,3 @@ func (pq *PriorityQueue[T]) Empty() bool {
 func Swap[T any](x, y *T) {
 	*x, *y = *y, *x
 }
-
-type Comparable interface {
-	~int | ~int8 | ~int16 | ~int32 | ~int64 | ~uint | ~uint8 | ~uint16 | ~uint32 | ~uint64 | ~float32 | ~float64 | ~string
-}
-
-func Less[T Comparable](x, y T) bool {
-	return x < y
-}
-
-func Greater[T Comparable](x, y T) bool {
-	return x > y
-}
-
-func IsSorted[T any](arr []T, cmp func(x, y T) bool) bool {
-	for i := range arr {
-		if i > 0 && cmp(arr[i], arr[i-1]) {
-			return false
-		}
-	}
-	return true
-}
