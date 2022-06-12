@@ -5,8 +5,8 @@ type IKeyofValue[Key, Val any] interface {
 }
 
 type Pair[Tp, Ty any] struct {
-	first  Tp
-	second Ty
+	First  Tp
+	Second Ty
 }
 
 type Select1st[Key, Val any] struct{}
@@ -19,11 +19,11 @@ func (Identity[Val]) KeyofValue(val Val) Val {
 }
 
 func (Select1st[Key, Val]) KeyofValue(val Pair[Key, Val]) Key {
-	return val.first
+	return val.First
 }
 
 func (Select2st[Key, Val]) KeyofValue(val Pair[Key, Val]) Val {
-	return val.second
+	return val.Second
 }
 
 func MakePair[Tp any, Ty any](first Tp, second Ty) Pair[Tp, Ty] {
