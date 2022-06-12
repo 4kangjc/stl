@@ -84,3 +84,12 @@ func Less[T Comparable](x, y T) bool {
 func Greater[T Comparable](x, y T) bool {
 	return x > y
 }
+
+func IsSorted[T any](arr []T, cmp func(x, y T) bool) bool {
+	for i := range arr {
+		if i > 0 && cmp(arr[i], arr[i-1]) {
+			return false
+		}
+	}
+	return true
+}
