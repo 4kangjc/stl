@@ -19,7 +19,6 @@ func TestPriorityQueue(t *testing.T) {
 
 	arr := []int{}
 	for !pq.Empty() {
-		//Info(pq.Pop())
 		arr = append(arr, pq.Pop())
 	}
 	t.Log(arr)
@@ -38,7 +37,6 @@ func TestPriorityQueue(t *testing.T) {
 
 	t.Log(pq2)
 	for !pq2.Empty() {
-		//Info(pq2.Pop())
 		arr2 = append(arr2, pq2.Top())
 		pq2.Pop()
 	}
