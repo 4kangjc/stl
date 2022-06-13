@@ -23,4 +23,8 @@ func Test_Pair(t *testing.T) {
 		t.Log(p3)
 		t.Error("MakePair Timer error")
 	}
+	if timer, str := p3.Get(); timer.now != 1 && str != "Timer" {
+		t.Log(p3)
+		t.Error("Get Timer Error")
+	}
 }

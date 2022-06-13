@@ -9,6 +9,10 @@ type Pair[Tp, Ty any] struct {
 	Second Ty
 }
 
+func (p *Pair[Tp, Ty]) Get() (Tp, Ty) {
+	return p.First, p.Second
+}
+
 type Select1st[Key, Val any] struct{}
 type Select2st[Key, Val any] struct{}
 
